@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "raleway";
+    src: url("../templates/fonts/Raleway-Regular.ttf");
+}
+
+.filtro {
+    display:none;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(70deg, blue, rgb(196, 47, 72));
+    font-family: 'raleway'  !important;
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+   
+}
+
+#btnE {
+    background-color: green;
+}
+#btnE:hover {
+    background-color: rgb(1, 83, 1)
+}
+
+.table {
+    max-width: 100%;
+margin:0 auto;
+-webkit-box-shadow: 5px 5px 15px 5px #000000; 
+box-shadow: 5px 5px 15px 5px #000000;
+
+}
+
+#btnA {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding: 15px;
+    background-color:aqua;
+
+}
+
+#buscador {
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 1%;
+
+}
