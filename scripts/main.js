@@ -16,15 +16,15 @@ const modal = new bootstrap.Modal(document.getElementById("ventanaModal"));
 /* esta es una función global usando window. en vez de const. Se requiere para poder añadir las funciones directamente a la etiqueta de los botones en el archivo list. 
 En este tipo de función, no es posible el uso de export directamente como con las otras funciones, por tanto se dejan aquí para que funcionen correctamente */
 window.showEditModal = (index) => {
-// Se le pasa el index del array como parámetro y se igual al index que creamos para editar //
+    // Se le pasa el index del array como parámetro y se igual al index que creamos para editar //
     indexToEdit = index
     document.getElementById('nombreMod').value = inventory[index].nombre
     document.getElementById('categoriaMod').value = inventory[index].categoria
     document.getElementById('cantidadMod').value = inventory[index].cantidad
     document.getElementById('precioMod').value = inventory[index].precio
     // Usamos el método show de las ventanas modales de Bootstrap para mostrar la ventana modal donde se podrá editar el producto//
-    modal.show(); 
-} 
+    modal.show();
+}
 // funcion para editar el producto
 const editProduct = (e) => {
     e.preventDefault()
@@ -44,13 +44,13 @@ document.addEventListener("keyup", e => {
     if (e.target.matches('#buscador')) {
         document.querySelectorAll('.item').forEach(item => {
             item.textContent.toLocaleLowerCase().includes(e.target.value)
-        // Operador ternario que añadirá o quitará la clase filtro que contiene un display none, para que se oculten aquellos elementos que no coincidan con la búsqueda 
+                // Operador ternario que añadirá o quitará la clase filtro que contiene un display none, para que se oculten aquellos elementos que no coincidan con la búsqueda 
                 ? item.classList.remove('filtro')
                 : item.classList.add('filtro');
 
         })
         /* en caso de que todos los elementos tengan la clase filtro, significará que no ha encontrado ningún elemento que coincida con la búsqueda
-           Por tanto, saltará la alerta con el mensaje , pero también se mostrará la tabla para que no quede vacía al no haber resultados de la búsqueda */ 
+           Por tanto, saltará la alerta con el mensaje , pero también se mostrará la tabla para que no quede vacía al no haber resultados de la búsqueda */
         if (document.querySelectorAll('.filtro').length === inventory.length) {
             alert("No hay coincidencias")
             listProducts()

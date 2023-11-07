@@ -1,5 +1,5 @@
 import { inventory } from "../scripts/inventory.js";
- 
+
 const table = document.getElementById("tabla")
 // funcion para calcular el total del inventario
 const calcularTotalIventario = () => {
@@ -9,7 +9,7 @@ const calcularTotalIventario = () => {
         precioTotal += item.cantidad * item.precio;
 
     })
-    document.getElementById("total").textContent= precioTotal;
+    document.getElementById("total").textContent = precioTotal;
 
 }
 // función que va creando la tabla y la muestra
@@ -20,9 +20,9 @@ export const listProducts = () => {
     inventory.map((item, index) => {
         // se crean las partes de la tabla
         const fila = document.createElement('tr')
-    fila.classList.add('item')
+        fila.classList.add('item')
 
-    // los botones tienen las funciones en las propias etiquetas para su correcto funcionamiento, reciben index como parámetro para poder borrar el elemento correcto
+        // los botones tienen las funciones en las propias etiquetas para su correcto funcionamiento, reciben index como parámetro para poder borrar el elemento correcto
         const celdas =
             ` 
     <td>${item.nombre}</td>
@@ -38,5 +38,5 @@ export const listProducts = () => {
         table.append(fila)
     })
     // se llama a la función para calcular el total del inventario
-   calcularTotalIventario();
+    calcularTotalIventario();
 }
