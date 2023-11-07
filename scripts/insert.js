@@ -1,4 +1,4 @@
-import { inventory } from "../scripts/inventory.js";
+import { inventory } from "./inventory.js";
 import { listProducts } from "./list.js";
 
 // Id para la búsqueda
